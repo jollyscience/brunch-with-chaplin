@@ -7,10 +7,6 @@ module.exports = class ModuleLoader
   #stores instances of modules so they can be called later
   moduleInstances: {}
   
-  #list of usable modules and their filenames/locations
-  registeredModules: 
-    header: 'controllers/header-controller'
-  
   #stores instances of collections so they can be called later
   collections: {}
 
@@ -59,7 +55,7 @@ module.exports = class ModuleLoader
 
     unless @moduleInstances[options.id]?
       try
-        module = require @registeredModules[options.module]
+        module = require "modules/#{options.module}/#{options.module}-controller"
         @moduleInstances[options.id] = new module(options.initOptions)
         @moduleInstances[options.id].isModule = true
         mediator.publish "module:loaded::#{options.id}"
