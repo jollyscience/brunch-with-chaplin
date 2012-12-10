@@ -1,13 +1,12 @@
-mediator = require 'mediator'
-chaplinUtils = require 'chaplin/lib/utils'
+Chaplin = require 'chaplin'
 
 # Application-specific utilities
 # ------------------------------
 
 # Delegate to Chaplin’s utils module
-utils = chaplinUtils.beget chaplinUtils
+utils = Chaplin.utils.beget Chaplin.utils
 
-#_(utils).extend
-  # someMethod: ->
+# _(utils).extend
+#  someMethod: ->
 
 module.exports = utils

@@ -1,24 +1,38 @@
 # Brunch with Chaplin
-Brunch with Chaplin is a fork of [Chaplin](https://github.com/moviepilot/chaplin) that is bundled to one file for usage with [Brunch](http://brunch.io).
+![](https://a248.e.akamai.net/camo.github.com/b7ebb8bbcec7938940cf8e9c441124c3bddafd3a/687474703a2f2f662e636c2e6c792f6974656d732f34373039326b30423141334a317a3166306b34362f6277632e706e67)
 
-Requires Brunch 1.1+.
+Brunch with Chaplin is a skeleton (boilerplate) for [Brunch](http://brunch.io)
+based on [Chaplin](http://chaplinjs.org) framework.
+
+Requires Brunch 1.4+.
 
 ## Getting started
-* Create new project via executing `brunch new --skeleton git://github.com/paulmillr/brunch-with-chaplin.git`
+* Create new project via executing `brunch new <project name>`.
+Brunch with chaplin is a default application skeleton for Brunch,
+so you don't need to specify `--skeleton` option for the command.
 * Build the project with `brunch b` or `brunch w`.
 * Open the `public/` dir to see the result.
-* Remove `home` view, controller, template & style via `brunch d scaffold home`.
 * Write your code.
 
-Example application built with the lib: [Tweet your brunch](https://github.com/brunch/twitter).
+Example application built with the skeleton:
+[Ost.io](https://github.com/paulmillr/ostio).
 
-See [Chaplin github page](https://github.com/moviepilot/chaplin) for
-documentation.
+See [Chaplin site](http://chaplinjs.org) for docs and more info.
+
+## Difference from Chaplin Boilerplate
+[Chaplin Boilerplate](https://github.com/chaplinjs/chaplin-boilerplate)
+is a official boilerplate all for chaplin. This skeleton is almost the same,
+except a few changes:
+
+* Added Header.
+* CommonJS is used instead of AMD, because it's easier to use & debug.
 
 ## Features
-* HTML5Boilerplate 3.0 html & css are included.
+* HTML5Boilerplate html & css are included.
 * CoffeeScript + Stylus + Handlebars as app languages
-* Backbone as main framework
+(you can change this to anything you want)
+* Backbone as main MVC/MVP library, Chaplin as meta-framework.
+* Support of IE8 and up.
 * Cross-module communication using the Mediator and Publish/Subscribe patterns
 * Controllers for managing individual UI views
 * Rails-style routes which map URLs to controller actions
@@ -28,23 +42,14 @@ enforce conventions
 * Strict memory management and object disposal
 * A collection with additional manipulation methods for smarter change events
 * A collection view for easy and intelligent list rendering
-* Client-side authentication using service providers like Facebook, Google
-and Twitter
-* Easy debugging: just uncomment `#console.debug` in all files.
 
-## Other
-Versions of software the skeleton uses:
-
-* HTML5Boilerplate 3.0.3
-* jQuery 1.7.2
-* Backbone 0.9.2
-* Underscore 1.3.3
-* Chaplin [5219d095d5d95ff396647601b214129956befe7a](https://github.com/moviepilot/chaplin/commit/5219d095d5d95ff396647601b214129956befe7a)
+## Authentication
+If you build an application with authentication, there are some useful abstractions for it out there: https://github.com/chaplinjs/chaplin-auth.
 
 ## License
 The MIT license.
 
-Copyright (c) Paul Miller (http://paulmillr.com/)
+Copyright (c) 2012 Paul Miller (http://paulmillr.com/)
 
 Copyright (c) 2012 Moviepilot GmbH, 9elements GmbH et al.
 
