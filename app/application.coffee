@@ -1,8 +1,9 @@
 Chaplin = require 'chaplin'
-HeaderController = require 'controllers/header-controller'
 Layout = require 'views/layout'
 mediator = require 'mediator'
 routes = require 'routes'
+
+ModuleLoader = require 'module-loader'
 
 # The application object
 module.exports = class Application extends Chaplin.Application
@@ -17,6 +18,8 @@ module.exports = class Application extends Chaplin.Application
     @initDispatcher controllerSuffix: '-controller'
     @initLayout()
     @initMediator()
+
+    @moduleLoader = new ModuleLoader()
 
     # Application-specific scaffold
     @initControllers()
@@ -48,7 +51,14 @@ module.exports = class Application extends Chaplin.Application
     # and views which are needed the whole time, for example header, footer
     # or navigation views.
     # e.g. new NavigationController()
-    new HeaderController()
+    mediator.publish 'module:load',
+      id: 'header'
+      module: 'header'
+#       #container: @$('#table-container')
+#       #action: 'basic'
+#       initOptions:
+#         collection_id: 'team'
+#         collection_class: Team
 
   # Create additional mediator properties
   # -------------------------------------
